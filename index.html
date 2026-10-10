@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="页澈隐私政策：说明文档扫描、图片处理与 PDF 导出过程中的信息处理方式。">
+  <title>页澈隐私政策</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%23173544'/%3E%3Cpath d='M20 13h19l8 8v30H20z' fill='%23f8fbfc'/%3E%3Cpath d='M39 13v10h8M27 31h13M27 38h13' fill='none' stroke='%23258d91' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #173544;
+      --muted: #60737c;
+      --line: #dce7e8;
+      --surface: #ffffff;
+      --wash: #f1f7f7;
+      --accent: #258d91;
+      --accent-deep: #16696d;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #eef6f6 0, #f8fbfb 20rem, #f8fbfb 100%);
+      color: var(--ink);
+      font: 16px/1.8 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+    a { color: var(--accent-deep); text-underline-offset: 3px; }
+    .shell { width: min(920px, calc(100% - 32px)); margin: 0 auto; padding: 56px 0 72px; }
+    .masthead {
+      position: relative;
+      overflow: hidden;
+      padding: 42px clamp(24px, 6vw, 58px);
+      border: 1px solid rgba(37, 141, 145, .2);
+      border-radius: 28px;
+      background: var(--surface);
+      box-shadow: 0 24px 70px rgba(23, 53, 68, .09);
+    }
+    .masthead::after {
+      content: "";
+      position: absolute;
+      inset: auto -70px -110px auto;
+      width: 260px;
+      height: 260px;
+      border: 46px solid rgba(37, 141, 145, .08);
+      border-radius: 50%;
+    }
+    .brand { display: flex; align-items: center; gap: 14px; margin-bottom: 30px; }
+    .mark {
+      display: grid;
+      width: 44px;
+      height: 44px;
+      place-items: center;
+      border-radius: 13px;
+      background: var(--ink);
+      color: white;
+      font-weight: 750;
+      letter-spacing: -.08em;
+    }
+    .brand-name { font-size: 1.1rem; font-weight: 720; }
+    .eyebrow { margin: 0 0 8px; color: var(--accent-deep); font-size: .88rem; font-weight: 700; letter-spacing: .12em; }
+    h1 { margin: 0; font-size: clamp(2rem, 6vw, 3.4rem); line-height: 1.16; letter-spacing: -.04em; }
+    .lead { max-width: 650px; margin: 20px 0 0; color: var(--muted); font-size: 1.05rem; }
+    .meta { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-top: 25px; color: var(--muted); font-size: .9rem; }
+    .privacy-note {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 15px;
+      margin: 22px 0;
+      padding: 20px 22px;
+      border: 1px solid rgba(37, 141, 145, .22);
+      border-radius: 18px;
+      background: #eaf5f4;
+    }
+    .privacy-note strong { display: block; color: var(--accent-deep); }
+    .privacy-note p { margin: 2px 0 0; color: #44636b; }
+    .dot { width: 11px; height: 11px; margin-top: 9px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 6px rgba(37, 141, 145, .12); }
+    main {
+      margin-top: 22px;
+      padding: 16px clamp(24px, 6vw, 58px) 42px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: var(--surface);
+    }
+    section { padding-top: 32px; scroll-margin-top: 24px; }
+    section + section { margin-top: 30px; border-top: 1px solid var(--line); }
+    h2 { margin: 0 0 12px; font-size: 1.25rem; letter-spacing: -.02em; }
+    h3 { margin: 22px 0 7px; font-size: 1rem; }
+    p { margin: 9px 0; }
+    ul { margin: 10px 0 0; padding-left: 1.2rem; }
+    li + li { margin-top: 8px; }
+    .table-wrap { overflow-x: auto; margin-top: 16px; }
+    table { width: 100%; min-width: 650px; border-collapse: collapse; }
+    th, td { padding: 14px 15px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { background: var(--wash); color: #3c5962; font-size: .9rem; }
+    .rights-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      margin-top: 12px;
+      padding: 8px 16px;
+      border: 1px solid var(--accent);
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    footer { padding: 26px 8px 0; color: var(--muted); text-align: center; font-size: .88rem; }
+    @media (max-width: 620px) {
+      .shell { width: min(100% - 20px, 920px); padding: 18px 0 38px; }
+      .masthead, main { border-radius: 20px; }
+      .masthead { padding-top: 28px; }
+      .privacy-note { grid-template-columns: 1fr; }
+      .dot { margin: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="masthead">
+      <div class="brand"><div class="mark" aria-hidden="true">页</div><div class="brand-name">页澈</div></div>
+      <p class="eyebrow">PRIVACY POLICY</p>
+      <h1>页澈隐私政策</h1>
+      <p class="lead">本政策说明页澈在提供文档扫描、图片处理、文档管理与 PDF 导出功能时，如何调用设备能力以及如何保护您的信息。</p>
+      <div class="meta"><span>生效日期：2026年9月30日</span><span>更新日期：2026年10月8日</span></div>
+    </header>
+
+    <aside class="privacy-note" aria-label="本地处理说明">
+      <span class="dot" aria-hidden="true"></span>
+      <div><strong>文档内容仅在设备本地处理</strong><p>页澈不要求注册或登录，不提供广告、统计或云同步服务，不会将您的图片、文档或使用记录上传到服务器。</p></div>
+    </aside>
+
+    <main>
+      <section>
+        <h2>一、适用范围与运营者</h2>
+        <p>页澈由张**（以下简称“我们”）提供。本政策适用于页澈 Android 版本。页澈是一款本地文档扫描和 PDF 处理工具，用于拍摄或导入图片、识别文档边缘、校正和整理页面，以及生成、保存、分享或打印 PDF。</p>
+      </section>
+
+      <section>
+        <h2>二、我们如何处理信息</h2>
+        <p>我们仅在您主动使用相关功能时，在您的设备本地处理以下内容：</p>
+        <ul>
+          <li>您主动拍摄或选择的图片；</li>
+          <li>文档名称、页面顺序、裁剪、旋转、图像增强和导出设置；</li>
+          <li>在应用本地目录保存的扫描原图、校正图片、文档清单和 PDF 文件。</li>
+        </ul>
+        <p>上述内容不会被页澈传输到开发者服务器，也不会用于用户画像、广告投放或自动化决策。</p>
+      </section>
+
+      <section>
+        <h2>三、设备权限与调用目的</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>设备能力</th><th>使用目的</th><th>调用时机</th></tr></thead>
+            <tbody>
+              <tr><td>相机</td><td>显示取景预览、拍摄文档、识别文档边缘及完成自动拍摄。</td><td>仅在您主动点击“扫描文档”或“补拍”时调用。</td></tr>
+              <tr><td>照片或媒体文件</td><td>读取您主动选择的图片，用于创建或补充扫描文档。</td><td>仅在您主动点击“导入图片”并完成系统选择时读取。</td></tr>
+              <tr><td>文件保存、分享与打印</td><td>将您生成的 PDF 保存至指定位置，或交由系统分享、打印服务处理。</td><td>仅在您主动执行对应操作时调用。</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>您可以在系统设置中关闭相机或照片访问权限。关闭后，对应功能将无法使用，但不会影响不依赖该权限的其他本地功能。</p>
+      </section>
+
+      <section>
+        <h2>四、本地存储与保存期限</h2>
+        <p>扫描图片、文档与设置仅保存在您的设备本地，保存至您主动删除、清除应用数据或卸载应用为止。Android 导出的 PDF 默认保存在“下载/页澈”，您也可以通过系统文件管理器查看或删除。</p>
+      </section>
+
+      <section>
+        <h2>五、第三方组件</h2>
+        <p>页澈使用 Flutter、image_picker、path_provider、share_plus、pdf 和 image 等开源组件实现界面渲染、照片选择、本地目录访问、系统分享、PDF 生成和图像处理。这些组件在页澈中不用于广告、统计或网络上传，也不会独立获取您的文档内容。</p>
+      </section>
+
+      <section>
+        <h2>六、信息共享、转让与跨境传输</h2>
+        <p>页澈不会向开发者服务器上传信息，因此不会出售、共享或转让您的扫描图片和文档，也不会将其传输至境外。您主动使用系统分享或打印功能时，内容将交由您选择的目标应用或系统服务处理，相关处理规则由对应服务提供方说明。</p>
+      </section>
+
+      <section>
+        <h2>七、您的隐私权利</h2>
+        <p>您可以在应用内查看和修改文档名称、页面顺序、裁剪、旋转及图像增强设置；可以将文档移至回收站并永久删除；也可以在“设置 → 隐私与权限”撤回隐私授权。已经导出到公共目录的 PDF 需要通过系统文件管理器单独删除。</p>
+        <a class="rights-link" href="./rights/">查看完整隐私权利说明</a>
+      </section>
+
+      <section>
+        <h2>八、未成年人保护</h2>
+        <p>页澈不以未满十四周岁的未成年人为专门服务对象，也不会建立未成年人账号或主动收集其身份信息。未成年人应在监护人指导下使用本应用并管理设备中的文档内容。</p>
+      </section>
+
+      <section>
+        <h2>九、政策更新</h2>
+        <p>当应用功能、权限或信息处理方式发生变化时，我们将更新本政策，并通过应用内提示或应用市场页面向您说明。涉及处理方式重大变化时，我们会再次征得您的同意。</p>
+      </section>
+
+      <section id="contact">
+        <h2>十、联系我们</h2>
+        <p>如对本政策或隐私权利有疑问，可以发送邮件至 <a href="mailto:zlj010723@163.com">zlj010723@163.com</a>。我们将在收到请求并核验必要信息后尽快处理。</p>
+      </section>
+    </main>
+    <footer>© 2026 页澈开发者 · 文档内容仅在本地处理</footer>
+  </div>
+</body>
+</html>
